@@ -38,7 +38,7 @@ import logging.handlers
 # 注5:backupCount表示保留个数,比如rotate_type=MIDNIGHT,backupCount=10,则表示保存10天的数据
 # 注6:rotate_type表示滚动形式，请选择 'H' 和 'MIDNIGHT'，不要选择其他形式
 def init_logger(file_path='./',
-                file_name='threatintel',
+                file_name='common_logger',
                 is_need_console=True,
                 console_level='DEBUG',
                 backupCount=10,
