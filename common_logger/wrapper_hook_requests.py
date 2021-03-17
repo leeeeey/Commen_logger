@@ -20,8 +20,9 @@
 
 import functools
 import time
-from Utils.LogUtils.base_trace_log import *
+from .base_trace_log import *
 import traceback
+import common_logger
 
 
 # 根据 kwargs 拿到 get or post
@@ -76,11 +77,6 @@ def prepare_params(kwargs):
     http_params = ''
     url = ''
     try:
-        # create cspanid
-        # cspanid = ''
-        # put cspanid in thread local
-        # set_cspanid(cspanid)
-
         # init_request_element
         url = requests_init_url(kwargs)
         http_params = requests_init_args(kwargs)
@@ -88,7 +84,7 @@ def prepare_params(kwargs):
         # alternate_header
         alternate_header(kwargs)
     except Exception as e:
-        # do not clear cspanid
+
         common_logger.pylogerror(traceback.format_exc(limit=1))
         pass
 
@@ -139,7 +135,7 @@ def log_error_trace(e, http_params, start_time, url):
                           args=http_params
                           )
     except Exception as e:
-        # clear cspanid
+
         common_logger.pylogerror(traceback.format_exc(limit=1))
         pass
 
