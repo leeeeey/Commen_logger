@@ -1,11 +1,9 @@
 # coding=utf8
 
-import functools
 import importlib
 import sys
-import time
 
-from Utils.LogUtils.wrapper_hook_requests import requests_http_wrapper
+from common_logger.wrapper_hook_requests import requests_http_wrapper
 
 _hook_modules = {'requests'}
 

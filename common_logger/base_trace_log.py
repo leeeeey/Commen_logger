@@ -1,8 +1,7 @@
 # coding=utf8
-from Utils.LogUtils.model.trace_content import TraceContent
-from Utils.LogUtils.common_dltags import common_dltags
-from Utils.LogUtils import common_logger
-
+from common_logger.model.trace_content import TraceContent
+from common_logger.common_dltags import common_dltags
+import common_logger
 
 
 # standard request_in log
@@ -222,23 +221,23 @@ def error_tracestr(s):
     common_trace_log("_undef", "error", _msg=str(s))
 
 # if __name__ == '__main__':
-    # common_trace_log("_http_ok", 0)
-    #
-    # standard_log_request_in(uri='/path1', content_type="application-json",
-    #                         args={}, method='GET', remote_ip='127.0.0.1',
-    #                         host='localhost', errno=0, errmsg='ok')
-    # standard_log_request_in(None)
-    #
-    # standard_log_request_out(uri="/123", errno=0, errmsg="ok", proc_time=0.1, is_success=True, response={}, args={},
-    #                          test=(123, 456), t2={list: 123})
-    #
-    # standard_log_http(url='http://localhost:10001/tornado_a/first',
-    #                   proc_time=0.01,
-    #                   errno=500,
-    #                   x="123",
-    #                   errmsg='failed',
-    #                   response={},
-    #                   is_success=False, y=[])
+# common_trace_log("_http_ok", 0)
+#
+# standard_log_request_in(uri='/path1', content_type="application-json",
+#                         args={}, method='GET', remote_ip='127.0.0.1',
+#                         host='localhost', errno=0, errmsg='ok')
+# standard_log_request_in(None)
+#
+# standard_log_request_out(uri="/123", errno=0, errmsg="ok", proc_time=0.1, is_success=True, response={}, args={},
+#                          test=(123, 456), t2={list: 123})
+#
+# standard_log_http(url='http://localhost:10001/tornado_a/first',
+#                   proc_time=0.01,
+#                   errno=500,
+#                   x="123",
+#                   errmsg='failed',
+#                   response={},
+#                   is_success=False, y=[])
 #
 #     # standard_log_redis(host='local',port=6379,proc_time=0.01,errno=0,errmsg='ok',is_success=1,command='hdel XXX')
 #
